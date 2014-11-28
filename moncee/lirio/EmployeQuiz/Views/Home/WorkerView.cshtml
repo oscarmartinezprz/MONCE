@@ -1,0 +1,103 @@
+﻿@model EmployeQuiz.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/content/Site.css" />
+    <title>WorkerView</title>
+</head>
+<body>
+    <div id="caja">
+        @{
+            try
+            {  
+        <center>
+            <ul>
+                <li>
+        <img src="@Url.Content(Model.PhotoPath)" alt="Sample Image" width="400" height="500"/>
+                    </li>
+                </ul>
+
+<table id="tab">
+    <tr id="h">
+        <td id="d">
+           <p>
+            <b>CARGO:</b>
+          </p>
+        </td>
+            <td id="i"><p>@Model.Position</p></td>
+    </tr>
+
+ <tr id="h">
+        <td id="d">
+        <p>
+            <b>NUMERO DE TRABAJADOR:</b>
+        </p>
+        </td>     
+            <td id="i"><p>@Model.Id</p></td>
+        
+    </tr>
+
+<tr id="h">
+        <td id="d">
+           <p>
+            <b>NOMBRE DEL TRABAJADOR:</b>
+           </p>
+        </td>
+            <td id="i"><p>@Model.Name</p></td>
+</tr>
+
+
+<tr id="h">
+     <td id="d">
+        <p>
+            <b>APELLIDOS DEL TRABAJADOR:</b>
+        </p>
+     </td>
+            <td id="i"><p>@Model.FirstLastname @Model.SecondLastname</p></td>
+        
+</tr>
+
+<tr id="h">
+     <td id="d">
+        <p>
+            <b>SUELDO:</b>
+       </p>
+     </td>
+            <td id="i"><p>@Model.Wange</p></td>
+        
+</tr>
+
+<tr id="h">
+     <td id="d">
+        <p>
+            <b>SEXO:</b>
+       </p>
+         </td>
+            <td id="i"><p>@Model.Sex</p></td>
+ </tr>       
+</table>
+        </center>
+        }
+        catch (Exception){
+         @: <b  id="error"><h2> TRABAJADOR NO ENCONTRADO</h2></b>
+         <img src="~/Photos/oscar.jpg"/>
+        }
+        }
+    </div>
+
+    <br>
+    <center>
+        <h1>@Html.ActionLink("Regresar a la pagina principal" , "Index")</h1>
+        <br/>
+       
+    </center>
+   
+</body>
+</html>
